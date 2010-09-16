@@ -7,6 +7,8 @@ gem 'rails', '3.0.0'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
+gem 'formtastic'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
@@ -27,4 +29,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'rspec-rails', '2.0.0.beta.22'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'acts_as_fu'
 end

@@ -1,0 +1,3 @@
+groupie_group:
+  id: <%= Fixtures.identify :groupie_group %>
+  name: Groupie Group

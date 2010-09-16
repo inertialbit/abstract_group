@@ -1,0 +1,5 @@
+<%= form.inputs do %>
+  <%= form.input :group_ids, :label => "Group", :as => :select, :collection => @groups %>
+  <%= form.input :name %>
+<% end %>
+<%= form.submit %>

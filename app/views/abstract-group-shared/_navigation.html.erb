@@ -1,0 +1,8 @@
+  <h4>Explore Groups</h4>
+  <p<%= "#{' class="nav_highlight"' if current_page?(root_path) || current_page?(groups_path)}" %>>
+    <%= link_to "Full list of Groups (#{Group.count})", groups_path %>
+  </p>
+  <h4>Manage Groups</h4>
+  <p<%= "#{' class="nav_highlight"' if current_page?(new_group_path)}" %>>
+    <%= link_to "Create New Group", new_group_path %>
+  </p>
