@@ -1,1 +1,18 @@
-Simple re-usable group management for rails 3.
+h2. Provides grouping behavior to arbitrary objects in a system.
+
+Can be run either as an Engine or standalone Rails app.
+
+h3. Use as Engine
+
+# Setup integration app with edge rails
+# (Clone &) Build & Install abstract-group gem
+# Update integration app's Gemfile to use the abstract-group gem
+# Copy migrations & Create symlinks to public
+# Setup database and run migrations
+
+Rake tasks provided by edge rails:
+
+<code>
+  FROM=abstract_group rake railties:copy_migrations
+  rake railties:create_symlinks
+</code>

@@ -20,3 +20,4 @@ public/images/favorite.png
 coverage/
 .rvmrc
 .bundle
+*.gem
