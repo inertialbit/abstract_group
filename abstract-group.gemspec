@@ -3,6 +3,7 @@ lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
  
 require 'abstract-group/version'
+require 'bundler'
  
 Gem::Specification.new do |s|
   s.name = "abstract-group"
@@ -29,6 +30,15 @@ Gem::Specification.new do |s|
   s.authors = ["Jeremiah Heller"]
   s.email = ["jeremiah@inertialbit.net"]
   s.summary = "Rails 3 Abstract Group Engine"
-  s.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*", "{db}/migrate/**/*", "{db}/seeds.rb", "{public}/images/**/*", "{public}/stylesheets/**/*", "{public}/javascripts/**/*", "{public}/abstract_group/**/*"]
+  s.files = Dir["Gemfile", "{lib}/**/*", "{app}/**/*", "{config}/**/*", "{db}/migrate/**/*", "{db}/seeds.rb", "{public}/images/**/*", "{public}/stylesheets/**/*", "{public}/javascripts/**/*", "{public}/abstract_group/**/*"]
   s.required_rubygems_version = ">= 1.3.7"
+
+  # thanks http://github.com/phs/engineer
+  Bundler.definition.dependencies.each do |dependency|
+    if (dependency.groups & [:default, :production]).any?
+      s.add_dependency dependency.name, *dependency.requirement.as_list
+    else
+      s.add_development_dependency dependency.name, *dependency.requirement.as_list
+    end
+  end
 end
