@@ -41,6 +41,6 @@ module AbstractGroup
     
     config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.1.min rails)
     
-    config.action_controller.asset_path = "abstract_group/%s"
+    config.action_controller.asset_path = "/abstract_group/%s"
   end
 end
