@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
-module AbstractGroup
+module AbstractGroup  
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -31,7 +31,7 @@ module AbstractGroup
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w()
+    # config.action_view.javascript_expansions[:defaults] = %w()
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -39,8 +39,9 @@ module AbstractGroup
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     
-    config.action_view.javascript_expansions[:defaults] = %w(jquery-1.4.1.min rails)
-    
-    config.action_controller.asset_path = "/abstract_group/%s"
+    config.action_view.javascript_expansions[:abstract_group] = %w(jquery-1.4.1.min.js rails)
   end
+  
+  mattr_reader :app_type
+  @@app_type = AbstractGroup::Application
 end

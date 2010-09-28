@@ -6,6 +6,7 @@ describe "groups/index.html.erb" do
       :name => "Groupie Group",
       :members => []
     })])
+    view.stub(:abstract_group).and_return(controller)
   end
   it "displays a listing of saved groups" do
     render

@@ -1,4 +1,4 @@
-AbstractGroup::Application.config do
+AbstractGroup.app_type.config do
   # Settings specified here will take precedence over those in config/environment.rb
 
   # The production environment is meant for finished, "live" apps.

@@ -29,7 +29,7 @@ class GroupsController < ApplicationController
       load_new_group
       if @group.save
         flash[:notice] = "Group successfully created!"
-        redirect_to group_path(@group)
+        redirect_to abstract_group.group_path(@group)
       else
         load_groups
         render :new
@@ -39,7 +39,7 @@ class GroupsController < ApplicationController
       @group = Group.find(params[:id])
       if @group.update_attributes(params[:group])
         flash[:notice] = "Group successfully updated!"
-        redirect_to group_path(@group)
+        redirect_to abstract_group.group_path(@group)
       else
         load_groups
         render :edit
@@ -48,6 +48,6 @@ class GroupsController < ApplicationController
     def destroy
       group = Group.destroy(params[:id])
       flash[:notice] = "Group deleted."
-      redirect_to groups_path
+      redirect_to abstract_group.groups_path
     end
 end
