@@ -10,6 +10,7 @@ describe "groups/new.html.erb" do
       :group_ids => [],
       :name => nil
     }))
+    view.stub(:abstract_group).and_return(self)
   end
   it "renders a Group form" do
     render

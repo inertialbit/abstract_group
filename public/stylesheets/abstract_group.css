@@ -37,7 +37,6 @@ input[type="checkbox"], input[type="radio"], input.checkbox, input.radio { top: 
 
 .top-banner { 
   background: #336;
-  margin: 10px;
   -webkit-border-bottom-left-radius: 8px;
   -moz-border-radius-bottomleft: 8px;
   border-bottom-left-radius: 8px;

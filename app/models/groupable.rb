@@ -1,8 +1,16 @@
 module Groupable
+
+  @@types ||= []
+  
   def self.included(base)
+    @@types << base
+    
     base.instance_eval do
       include Associations
     end
+  end
+  def self.types
+    (@@types - [Group]).reverse
   end
   def self.abstract_class?
     false

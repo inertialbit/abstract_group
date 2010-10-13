@@ -3,14 +3,18 @@
     <tr>
       <th>Group</th>
       <th>Memberships</th>
-      <th colspan="2">Manage</th>
+      <th colspan="3">Manage</th>
     </tr>
   </thead>
   <tbody>
     <% @groups.each do |group| %>
     <tr>
       <td><%= link_to group.name, abstract_group.group_path(group) %></td>
-      <td><%= group.members.group_by(&:class).map{|t,m| link_to(pluralize(m.size, t.to_s), abstract_group.send("#{t.to_s.downcase.pluralize}_path"))}.join("; ").html_safe %></td>
+      <td><%= group.members.group_by(&:class).map{|t,m| 
+        link_to(pluralize(m.size, t.to_s), engine_path({
+          :controller => t.to_s.downcase.pluralize, :action => 'index'
+        }))}.join("; ").html_safe %></td>
+      <td><%= link_to "add members", abstract_group.new_group_membership_path(group), :class => 'fake_button' %></td>
       <td><%= link_to("edit", abstract_group.edit_group_path(group), :class => 'fake_button') %></td>
       <td><%= link_to("delete", abstract_group.group_path(group), {
         :class => 'fake_button',

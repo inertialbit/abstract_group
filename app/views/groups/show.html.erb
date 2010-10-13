@@ -1,12 +1,12 @@
 <h3><%= @group.name %></h3>
 <p>Memberships: <%= @group.registered_memberships.count %></p>
 <% @group.members.group_by(&:class).map do |type, members| %>
-  <h4><%= link_to(pluralize(members.size, type.to_s), abstract_group.send("#{type.to_s.downcase.pluralize}_path")) %></h4>
+  <h4><%= link_to(pluralize(members.size, type.to_s), engine_path(type)) %></h4>
   <ol>
   <% members.each do |member| %>
     <% name_attr = member.attribute_names.detect{|m_attr| m_attr =~ /name/} %>
     <% if name_attr %>
-    <li><%= link_to(member.send(name_attr), abstract_group.send("#{type.to_s.downcase}_path", member)) %></li>
+    <li><%= link_to(member.send(name_attr), engine_path(member)) %></li>
     <% end %>
   <% end %>
   </ol>

@@ -6,3 +6,8 @@
   <p<%= "#{' class="nav_highlight"' if current_page?(abstract_group.new_group_path)}" %>>
     <%= link_to "Create New Group", abstract_group.new_group_path %>
   </p>
+  <% if @group && !@group.new_record? %>
+  <p<%= "#{' class="nav_highlight"' if current_page?(abstract_group.new_group_membership_path(@group))}" %>>
+    <%= link_to "Create New Membership", abstract_group.new_group_membership_path(@group) %>
+  </p>
+  <% end %>

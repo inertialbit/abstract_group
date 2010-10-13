@@ -1,5 +1,6 @@
 def loads_groups(&block)
-  Group.should_receive(:find).and_return([mock_group])
+  mock_group
+  Group.should_receive(:find).and_return([@group])
   yield
-  assigns[:groups].should eql [mock_group]
+  assigns[:groups].should eql [@group]
 end
