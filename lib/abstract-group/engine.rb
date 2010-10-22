@@ -3,7 +3,7 @@ module AbstractGroup
     engine_name :abstract_group
     config.asset_path = "/abstract_group%s"
     config.action_view.javascript_expansions[:abstract_group] = %w(jquery-1.4.1.min.js rails)
-    config.gem 'formtastic'
+    #config.gem 'formtastic'
   end
 
   mattr_reader :app_type
