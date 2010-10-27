@@ -26,7 +26,7 @@ class MembershipsController < AbstractGroup::ApplicationController
       if params[:group_id]
         @group = Group.find(params[:group_id])
       else
-        redirect_to(abstract_group.groups_path, {
+        redirect_to(groups_path, {
           :notice => "Which group does the new membership apply to?"
         })
       end
@@ -42,7 +42,7 @@ class MembershipsController < AbstractGroup::ApplicationController
     end
     def create
       memberships = Member.create!(params[:membership])
-      redirect_to(abstract_group.groups_path, {
+      redirect_to(groups_path, {
         :notice => "Created #{pluralize(memberships.count, 'Membership')}!"
       })
     end

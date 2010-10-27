@@ -1,16 +1,9 @@
 class AbstractGroup::ApplicationController < defined?(ApplicationController) ? ApplicationController : ActionController::Base
   protect_from_forgery
 
-  helper_method :abstract_group, :engine_path
+  helper_method :engine_path
   
   private
-    def abstract_group
-      if defined?(AbstractGroup::Engine)
-        super
-      else
-        return self
-      end
-    end
     def registered_engines
       Rails::Engine.subclasses.map do |sc|
         sc.to_s.underscore.gsub("/engine", "")

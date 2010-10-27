@@ -1,5 +1,5 @@
 <h2>Add Members to the <%= @group.name %> Group</h2>
-<%= semantic_form_for(@membership, :url => abstract_group.group_memberships_path) do |form| %>
+<%= semantic_form_for(@membership, :url => group_memberships_path) do |form| %>
   <%= form.inputs do %>
     <%= form.input :group_id, :as => :hidden, :value => params[:group_id] %>
     <% @members.group_by(&:class).each do |type, members| %>
