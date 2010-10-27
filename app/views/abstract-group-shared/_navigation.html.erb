@@ -1,13 +1,7 @@
   <h4>Explore Groups</h4>
-  <p<%= "#{' class="nav_highlight"' if current_page?(abstract_group.root_path) || current_page?(abstract_group.groups_path)}" %>>
-    <%= link_to "Full list of Groups (#{Group.count})", abstract_group.groups_path %>
-  </p>
+  <%= link_to_groups %>
   <h4>Manage Groups</h4>
-  <p<%= "#{' class="nav_highlight"' if current_page?(abstract_group.new_group_path)}" %>>
-    <%= link_to "Create New Group", abstract_group.new_group_path %>
-  </p>
+  <%= link_to_new_group %>
   <% if @group && !@group.new_record? %>
-  <p<%= "#{' class="nav_highlight"' if current_page?(abstract_group.new_group_membership_path(@group))}" %>>
-    <%= link_to "Create New Membership", abstract_group.new_group_membership_path(@group) %>
-  </p>
+  <%= link_to_new_group_membership(@group) %>
   <% end %>
