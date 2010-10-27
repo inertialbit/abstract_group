@@ -1,0 +1,5 @@
+Description:
+    Install abstract_group
+
+Example:
+    rails generate abstract_group:install

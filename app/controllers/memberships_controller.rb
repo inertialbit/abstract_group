@@ -1,4 +1,4 @@
-class MembershipsController < AbstractGroupController
+class MembershipsController < AbstractGroup::ApplicationController
   
   layout 'abstract-group'
   

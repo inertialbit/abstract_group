@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe AbstractGroupController do
+describe AbstractGroup::ApplicationController do
   it "finds the correct namespace for a given path helper"
 end

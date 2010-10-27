@@ -41,7 +41,4 @@ module AbstractGroup
     
     config.action_view.javascript_expansions[:abstract_group] = %w(jquery-1.4.1.min.js rails)
   end
-  
-  mattr_reader :app_type
-  @@app_type = AbstractGroup::Application
 end

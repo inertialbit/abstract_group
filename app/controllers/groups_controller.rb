@@ -1,4 +1,4 @@
-class GroupsController < AbstractGroupController
+class GroupsController < AbstractGroup::ApplicationController
   
   layout "abstract-group"
   
