@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremiah Heller"]
-  s.date = %q{2010-10-27}
+  s.date = %q{2010-10-28}
   s.description = %q{Provides grouping behavior to arbitrary objects in a system.}
   s.email = %q{jeremiah@inertialbit.net}
   s.extra_rdoc_files = [
@@ -61,6 +61,8 @@ Gem::Specification.new do |s|
      "db/schema.rb",
      "db/seeds.rb",
      "lib/abstract_group.rb",
+     "lib/abstract_group/action_view.rb",
+     "lib/abstract_group/asset_path.rb",
      "lib/abstract_group/engine.rb",
      "lib/generators/abstract_group/install/USAGE",
      "lib/generators/abstract_group/install/install_generator.rb",
