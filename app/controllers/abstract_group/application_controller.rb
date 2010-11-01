@@ -1,4 +1,4 @@
-class AbstractGroup::ApplicationController < defined?(ApplicationController) ? ApplicationController : ActionController::Base
+class AbstractGroup::ApplicationController < ApplicationController
   protect_from_forgery
 
   prepend_before_filter :use_engine_assets if Rails.env != 'production'
