@@ -1,7 +1,5 @@
 class GroupsController < AbstractGroup::ApplicationController
   
-  layout "abstract-group"
-  
   private
     def load_groups
       @groups = Group.find(:all, :order => 'name')

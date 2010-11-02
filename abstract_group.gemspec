@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jeremiah Heller"]
-  s.date = %q{2010-10-28}
+  s.date = %q{2010-11-02}
   s.description = %q{Provides grouping behavior to arbitrary objects in a system.}
   s.email = %q{jeremiah@inertialbit.net}
   s.extra_rdoc_files = [
@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "app/controllers/abstract_group/application_controller.rb",
+     "app/controllers/application_controller.rb",
      "app/controllers/groups_controller.rb",
      "app/controllers/memberships_controller.rb",
      "app/helpers/abstract_group/application_helper.rb",
@@ -32,6 +33,7 @@ Gem::Specification.new do |s|
      "app/models/member.rb",
      "app/models/membership.rb",
      "app/views/abstract-group-shared/_flash.html.erb",
+     "app/views/abstract-group-shared/_main_menu.html.erb",
      "app/views/abstract-group-shared/_navigation.html.erb",
      "app/views/groups/_form.html.erb",
      "app/views/groups/_group_checkboxes.html.erb",
@@ -39,9 +41,10 @@ Gem::Specification.new do |s|
      "app/views/groups/index.html.erb",
      "app/views/groups/new.html.erb",
      "app/views/groups/show.html.erb",
-     "app/views/layouts/abstract-group.html.erb",
+     "app/views/layouts/application.html.erb",
      "app/views/memberships/new.html.erb",
      "config/application.rb",
+     "config/blueprint_settings.yml",
      "config/boot.rb",
      "config/cucumber.yml",
      "config/database.yml",
@@ -67,6 +70,7 @@ Gem::Specification.new do |s|
      "lib/generators/abstract_group/install/USAGE",
      "lib/generators/abstract_group/install/install_generator.rb",
      "lib/generators/abstract_group/install/templates/abstract_group.rake",
+     "lib/tasks/blueprint.rake",
      "lib/tasks/cucumber.rake",
      "public/404.html",
      "public/422.html",
@@ -78,6 +82,17 @@ Gem::Specification.new do |s|
      "public/javascripts/rails.js",
      "public/robots.txt",
      "public/stylesheets/abstract_group.css",
+     "public/stylesheets/blueprint/icons/cross.png",
+     "public/stylesheets/blueprint/icons/doc.png",
+     "public/stylesheets/blueprint/icons/email.png",
+     "public/stylesheets/blueprint/icons/external.png",
+     "public/stylesheets/blueprint/icons/feed.png",
+     "public/stylesheets/blueprint/icons/im.png",
+     "public/stylesheets/blueprint/icons/key.png",
+     "public/stylesheets/blueprint/icons/pdf.png",
+     "public/stylesheets/blueprint/icons/tick.png",
+     "public/stylesheets/blueprint/icons/visited.png",
+     "public/stylesheets/blueprint/icons/xls.png",
      "public/stylesheets/blueprint/ie.css",
      "public/stylesheets/blueprint/plugins/buttons/icons/cross.png",
      "public/stylesheets/blueprint/plugins/buttons/icons/key.png",
@@ -99,6 +114,7 @@ Gem::Specification.new do |s|
      "public/stylesheets/blueprint/plugins/rtl/readme.txt",
      "public/stylesheets/blueprint/plugins/rtl/screen.css",
      "public/stylesheets/blueprint/print.css",
+     "public/stylesheets/blueprint/readme.txt",
      "public/stylesheets/blueprint/screen.css",
      "public/stylesheets/blueprint/src/forms.css",
      "public/stylesheets/blueprint/src/grid.css",

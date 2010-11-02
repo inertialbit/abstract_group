@@ -11,9 +11,7 @@
     <tr>
       <td><%= link_to group.name, group_path(group) %></td>
       <td><%= group.members.group_by(&:class).map{|t,m| 
-        link_to(pluralize(m.size, t.to_s), engine_path({
-          :controller => t.to_s.downcase.pluralize, :action => 'index'
-        }))}.join("; ").html_safe %></td>
+        link_to(pluralize(m.size, t.to_s), polymorphic_path(t))}.join("; ").html_safe %></td>
       <td><%= link_to "add members", new_group_membership_path(group), :class => 'fake_button' %></td>
       <td><%= link_to("edit", edit_group_path(group), :class => 'fake_button') %></td>
       <td><%= link_to("delete", group_path(group), {

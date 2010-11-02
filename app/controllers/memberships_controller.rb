@@ -1,7 +1,5 @@
 class MembershipsController < AbstractGroup::ApplicationController
   
-  layout 'abstract-group'
-  
   before_filter :load_group
   
   rescue_from ActiveRecord::RecordInvalid, :with => :invalid_record

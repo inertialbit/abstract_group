@@ -35,4 +35,28 @@ module AbstractGroup::ApplicationHelper
       :link_text => "Create New Membership"
     })
   end
+  
+  def render_abstract_group_main_menu
+    render :partial => 'abstract-group-shared/main_menu'
+  end
+  
+  def render_abstract_group_navigation(group=nil)
+    render :partial => 'abstract-group-shared/navigation', :locals => {
+      :group => group
+    }
+  end
+  
+  def abstract_group_stylesheet_includes
+    [
+      "abstract_group",
+      "formtastic",
+      "formtastic_changes"
+    ]
+  end
+  def abstract_group_javascript_includes
+    [
+      "jquery-1.4.1.min.js",
+      "rails"
+    ]
+  end
 end

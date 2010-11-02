@@ -2,6 +2,6 @@
   <%= link_to_groups %>
   <h4>Manage Groups</h4>
   <%= link_to_new_group %>
-  <% if @group && !@group.new_record? %>
+  <% if defined?(group) && !group.nil? && !group.new_record? %>
   <%= link_to_new_group_membership(@group) %>
   <% end %>

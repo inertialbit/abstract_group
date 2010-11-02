@@ -6,15 +6,14 @@
     <%= csrf_meta_tag %>
     <%= stylesheet_link_tag "blueprint/screen", :media => "screen, projection" %>
     <%= stylesheet_link_tag "blueprint/print", :media => "print" %>
-    <%= stylesheet_link_tag "blueprint/src/grid", :media => "screen, projection" %>
     
     <!--[if lt IE 8]>
       <%= stylesheet_link_tag "blueprint/ie", :media => "screen, projection" %>
     <![endif]-->
 
-    <%= stylesheet_link_tag "abstract_group", "formtastic", "formtastic_changes" %>
+    <%= stylesheet_link_tag abstract_group_stylesheet_includes %>    
+    <%= javascript_include_tag abstract_group_javascript_includes %>
     
-    <%= javascript_include_tag 'jquery-1.4.1.min.js', 'rails' %>
     <%= yield :javascript %>
   </head>
   <body>
@@ -33,8 +32,13 @@
       </div>
 
       <div class="span-4 last">
+        <div id="main_menu">
+          <%= render_abstract_group_main_menu %>
+        </div>
         <div class="sidebar">
-          <%= render :partial => 'abstract-group-shared/navigation' %>
+          <%= render :partial => 'abstract-group-shared/navigation', :locals => {
+            :group => @group
+          } %>
         </div>
 
       </div>
