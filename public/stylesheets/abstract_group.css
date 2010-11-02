@@ -158,3 +158,10 @@ div.select_popper_box ul li:hover { background: #EEE; }
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
+
+/* override padding in main_menu */
+#main_menu ul, #main_menu ol {
+  margin:0 1.5em 1.5em 0;
+  padding-left: 1em;
+  /* padding-left:3.333em; */
+}
