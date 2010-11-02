@@ -8,8 +8,8 @@ end
 describe Member do
   before(:each) do
     @hash = {
-      :group_id => "3",
-      :some_classes => ["4","5","6","7","8","9"]
+      "group_id" => "3",
+      "someclasses" => ["4","5","6","7","8","9"]
     }
   end
   it "create! memberships from a custom membership hash" do
