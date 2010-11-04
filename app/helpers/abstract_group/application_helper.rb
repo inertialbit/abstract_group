@@ -9,29 +9,33 @@ module AbstractGroup::ApplicationHelper
         wrapper_options = {:class => (wrapper_options[:class] || '') + " nav_highlight"}
       end
     end
-  
-    content_tag(tag, wrapper_options) do
-      link_to(link_text, path, link_options)
+
+    unless wrapper_options.delete(:no_wrapper)
+      return content_tag(tag, wrapper_options) do
+        link_to(link_text, path, link_options)
+      end
+    else
+      return link_to(link_text, path, link_options)
     end
   end
   def abstract_group_checkboxes(form)
     render :partial => 'groups/group_checkboxes', :object => form
   end
 
-  def link_to_groups
-    link_wrapper(groups_path, {}, {
+  def link_to_groups(wrapper_options={})
+    link_wrapper(groups_path, wrapper_options, {
       :link_text => "Full list of Groups (#{Group.count})"
     })
   end
 
-  def link_to_new_group
-    link_wrapper(new_group_path, {}, {
+  def link_to_new_group(wrapper_options={})
+    link_wrapper(new_group_path, wrapper_options, {
       :link_text => "Create New Group"
     })
   end
 
-  def link_to_new_group_membership(group)
-    link_wrapper(new_group_membership_path(group), {}, {
+  def link_to_new_group_membership(group, wrapper_options={})
+    link_wrapper(new_group_membership_path(group), wrapper_options, {
       :link_text => "Create New Membership"
     })
   end
