@@ -6,12 +6,14 @@ require 'rake'
 
 AbstractGroup::Application.load_tasks
 
+excluded_files = %w(config/database.yml)
+
 Engineer::Tasks.new do |gem|
   gem.name = "abstract_group"
   gem.summary = %Q{Provides grouping behavior to arbitrary objects in a system.}
   gem.description = %Q{Provides grouping behavior to arbitrary objects in a system.}
   gem.email = "jeremiah@inertialbit.net"
-  gem.homepage = "http://github.com/inertialbit/abstract-group"
+  gem.homepage = "http://github.com/inertialbit/abstract_group"
   gem.authors = ["Jeremiah Heller"]
   gem.require_path = 'lib'
   gem.files =  FileList[
@@ -19,6 +21,8 @@ Engineer::Tasks.new do |gem|
     "{app,config,lib,public,spec,test}/**/*",
     "db/**/*.rb"
   ]
+  
+  excluded_files.each{|f| gem.files.exclude(f)}
 
   # Include Bundler dependencies
   Bundler.definition.dependencies.each do |dependency|

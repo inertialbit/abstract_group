@@ -47,7 +47,6 @@ Gem::Specification.new do |s|
      "config/blueprint_settings.yml",
      "config/boot.rb",
      "config/cucumber.yml",
-     "config/database.yml",
      "config/environment.rb",
      "config/environments/development.rb",
      "config/environments/production.rb",
@@ -133,7 +132,7 @@ Gem::Specification.new do |s|
      "spec/views/groups/new.html.erb_spec.rb",
      "spec/views/groups/show.html.erb_spec.rb"
   ]
-  s.homepage = %q{http://github.com/inertialbit/abstract-group}
+  s.homepage = %q{http://github.com/inertialbit/abstract_group}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.7}
